@@ -2,7 +2,7 @@
 
 A full-stack web application for managing medicine schedules with AI-powered explanations and automated reminders.
 
-## 🎯 Features
+## Features
 
 - **Add Medicine**: Enter medicine name, dosage, time, and optional description
 - **View Medicines**: Display all medicines in a responsive card layout with glassmorphism design
@@ -13,7 +13,7 @@ A full-stack web application for managing medicine schedules with AI-powered exp
 - **Sound Toggle**: Enable/disable sound notifications
 - **Dark Glassmorphism UI**: Modern, aesthetic design with smooth animations
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - HTML5
@@ -26,13 +26,13 @@ A full-stack web application for managing medicine schedules with AI-powered exp
 - SQLite (database)
 - Google Generative AI (Gemini API)
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v14 or higher)
 - npm (comes with Node.js)
 - Google Gemini API key (free)
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone/Download the Project
 
@@ -75,7 +75,7 @@ node server.js
 
 You should see:
 ```
-🚀 MedRemind Backend running on port 3000
+MedRemind Backend running on port 3000
 Connected to SQLite database
 ```
 
@@ -187,7 +187,7 @@ Get AI explanation for a medicine.
 }
 ```
 
-## 🗄️ Database
+## Database
 
 The application uses SQLite for data storage. The database file (`medicines.db`) is automatically created in the `backend` directory when you first run the server.
 
@@ -202,7 +202,7 @@ CREATE TABLE medicines (
 );
 ```
 
-## 🎨 Design Features
+## Design Features
 
 - **Glassmorphism**: Frosted glass effect with blur and transparency
 - **Dark Theme**: Modern dark background with gradient accents
@@ -211,14 +211,14 @@ CREATE TABLE medicines (
 - **Loading States**: Spinners and loading indicators
 - **Error Handling**: Graceful error messages and toasts
 
-## 🔒 Security Notes
+## Security Notes
 
 - API keys are stored in the backend `.env` file (never exposed to frontend)
 - CORS is enabled for development
 - Input validation is performed on the backend
 - SQL injection prevention through parameterized queries
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Backend won't start
 - Ensure Node.js is installed: `node --version`
@@ -240,7 +240,7 @@ CREATE TABLE medicines (
 - Delete `backend/medicines.db` to reset the database
 - Ensure write permissions for the backend directory
 
-## 📝 Project Structure
+## Project Structure
 
 ```
 med-remind/
@@ -257,7 +257,7 @@ med-remind/
 └── README.md                # This file
 ```
 
-## 🚀 Development
+## Development
 
 ### Running in Development Mode
 
@@ -274,11 +274,11 @@ The server will automatically reload when you make changes to `server.js`.
 2. **Frontend**: Add new UI elements in `index.html` and logic in `script.js`
 3. **Styling**: Add new styles in `style.css`
 
-## 📄 License
+## License
 
 This project is open source and available for personal and educational use.
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork this project and customize it for your needs!
 
