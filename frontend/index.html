@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedRemind – Smart Medicine Reminder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="logo-area">
+                <h1>💊 MedRemind</h1>
+                <p class="subtitle">Smart Medicine Reminder</p>
+            </div>
+            <div class="controls-area">
+                <div id="live-clock" class="clock">00:00:00</div>
+                <button type="button" id="refresh-btn" class="btn-icon" title="Refresh">🔄</button>
+                <button type="button" id="sound-btn" class="btn-icon sound-off" title="Toggle Sound">🔕 Sound Off</button>
+            </div>
+        </header>
+
+        <!-- Add Form -->
+        <section class="glass-panel form-section">
+            <form id="med-form">
+                <input type="text" id="med-name" placeholder="Medicine Name" required>
+                <input type="text" id="med-dosage" placeholder="Dosage (e.g., 500mg)">
+                <input type="time" id="med-time" required>
+                <input type="text" id="med-desc" placeholder="Optional description...">
+                <button type="button" id="add-btn" class="btn-gradient">➕ Add Reminder</button>
+            </form>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="glass-panel search-section">
+            <input type="text" id="search-input" placeholder="🔍 Search medicines...">
+        </section>
+
+        <!-- Symptom to Medicine AI -->
+        <section class="glass-panel symptom-section">
+            <h3>🤒 Describe Your Symptoms</h3>
+            <textarea id="symptom-input" placeholder="Describe your symptoms (e.g., headache, fever, stomach pain...)"></textarea>
+            <button type="button" id="symptom-btn" class="btn-gradient">💡 Get Medicine Suggestions</button>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <main>
+            <div id="loading-spinner" class="spinner hidden">Loading...</div>
+            <div id="med-grid" class="grid-container">
+                <!-- Cards injected via JS -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">
+                <p>No medicines scheduled. Add one above!</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI Modal -->
+    <div id="ai-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <h2 id="modal-title">Medicine Info</h2>
+            <div id="modal-body" class="modal-body">
+                <p id="modal-text"></p>
+                <div id="modal-spinner" class="spinner hidden">Consulting AI...</div>
+            </div>
+            <button type="button" id="close-modal-btn" class="btn-outline">Close</button>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <h2>Edit Medicine</h2>
+            <div class="edit-form">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name" placeholder="Medicine Name">
+                <input type="text" id="edit-dosage" placeholder="Dosage (e.g., 500mg)">
+                <input type="time" id="edit-time">
+                <input type="text" id="edit-desc" placeholder="Optional description...">
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="cancel-edit-btn" class="btn-outline">Cancel</button>
+                <button type="button" id="save-edit-btn" class="btn-gradient">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification-toast" class="toast hidden">
+        <span id="toast-msg">It's time for your medicine!</span>
+    </div>
+
+    <!-- Alert Sound -->
+    <audio id="alert-sound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
